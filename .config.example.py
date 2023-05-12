@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# THIS IS OLD NOW:
 
 global_variables = {
 
