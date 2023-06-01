@@ -16,24 +16,28 @@ config = {
         "use_meta": True,
         "use_css": True,
         "use_extra_css": False,
+        "use_header": True,
+        "use_nav": True,
+        "use_footer": True,
         "use_js_head": False,
-        "use_js_foot": False,
+        "use_js_foot": False
+    },
+    "template_block_locations": {
         "meta_location": "template/meta.html",
         "css_location": "template/blog.css",
         "css_extra_location": "template/extra.css",
-        "js_head_location": "template/js_head.js",
-        "js_foot_location": "template/js_foot.js"
-    },
-    "template_blocks": {
         "header_location": "template/header.html",
         "nav_location": "template/nav.html",
-        "body_location": "template/body.html",
-        "blogs_location": "template/blogs.html",
         "footer_location": "template/footer.html"
+        "js_head_location": "template/js_head.js",
+        "js_foot_location": "template/js_foot.js"
+        "body_location": "template/body.html",
+        "blogs_location": "template/blogs.html"
     },
     "blogs": {
         # Specify options for the blogs tuple
         "show_avatar": True,
         "show_flag": True
-    }
+    },
+    "nav": ()
 }
