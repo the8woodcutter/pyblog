@@ -1,9 +1,9 @@
-## `PyBlog`
+## `PyBlog v0.1`
 
 ### Python3 weblog site generator script -- Single script to create and manage a blog using only python and text files
 #### I intend to redo bashblog ([github.com/the8woodcutter/bashblog](https://github.com/the8woodcutter/bashblog)) in python to do essentially the same thing
-* Author: the8woodcutter || [my XMPP/Mail](xmpp:chunk@toofast.vip)
-* Licence: TBD (_Incomplete Project_)
+* Author: the8woodcutter || [my XMPP](xmpp:chunk@toofast.vip) || [XMPP room](xmpp:the-subnet@chat.toofast.vip?join)
+* Licence: DO NOT COPY (_until licence decided_)
 
 ***
 
@@ -18,6 +18,13 @@
 	* Use of python for ANYTHING functional but when used as a script
 * More to come
 
+### `TODO:`
+* next/first python function will be 'what do we do with .config?'
+	* do we parse it ...  like a class and import it/?!?! <<<<<---
+	* anytime we need "key: value" it's imported and referable
+* the REAL next thing we do is...  decide what page types, ie: main index, tags, categories, profile, post index, rss index, etc
+	* make drawing of the blog intended structure 0-100% (_filling things in as we go_)
+
 ***
 
-`Need help or have a comment then submit an issue.`
+`Need help or have a comment then feel free to submit an issue.`
