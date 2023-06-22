@@ -24,15 +24,16 @@ class pb():
 
 # GLOBAL VARIABLES:
 	# HMTL Segments:
-	metadata_template = ""
-	javascript_head = ""
-	css = []
+	meta = ""
+	css = ""
+	extra_css = ""
 	header = ""
-	nav = []
+	nav = ()
 	body = ""
-	blogs = []
+	blogs = ()
 	footer = ""
-	javascript_foot = ""
+	js_head = ""
+	js_foot = ""
 
 	# Features:
 
