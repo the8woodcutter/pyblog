@@ -16,8 +16,7 @@
 
 import os
 import re
-from getpass import getpass
-from argparse import ArgumentParser
+from random import randint
 
 class pb():
 # ---------------------------------------------------------------------------------------------------
@@ -28,9 +27,13 @@ class pb():
 	css = ""
 	extra_css = ""
 	header = ""
-	nav = ()
+	nav = []
 	body = ""
-	blogs = ()
+	post_title = ""
+	post_author = ""
+	post_tags = []
+	post_date_time = ""
+	blogs = []
 	footer = ""
 	js_head = ""
 	js_foot = ""
@@ -69,13 +72,16 @@ class pb():
 # ---------------------------------------------------------------------------------------------------
 
 	def mod_title():
-		pass
+		
 
 	def mod_tags():
-		pass
+		tags = []		
 
 	def mod_author():
-		pass
+		author = input("Who is the author?  Or 'skip' for default")
+		return author
+
+# ---------------------------------------------------------------------------------------------------
 
 	def edit_post():
 	# using exact .html filename in full will allow you to modify the portion of the body of the post and the title
@@ -87,7 +93,53 @@ class pb():
 
 	def new_post():
 	# This will open up an editor (ie: nano) for creation of post title, post author, post, then tags
-		pass
+		r = randint(1000,2500)
+		cmd = "nano " + str(r)
+		print("Going to create a post using unix nano editor, choose ^c+x to save it when you're finished")
+		pause 5
+		os.system(cmd)
+		def ask_post():
+			print("Success!")
+			print("Do you like your post:")
+			pause 1
+			f = open(r, "r")
+			print(f.read())
+			pause 3
+			i = input('Yes?  No?')
+			pause 5
+			f = close()
+			if "y" in i or "Y" in i:
+				i = 1
+				yes_post()
+			if "n" in i or "N" in i:
+				i = 0
+				no_post()
+		def yes_post(i):
+			if i = 1
+				author = input("Who wrote is the author of this post?  Or 'skip' for default.")
+				if author == 'skip':
+					author = self.author
+					uri = str(r) + f".{author}."
+				else:
+					uri = str(r) + f".{author}."
+				title = input("What should your title be?  Please only use alphas, numerals and dashes ONLY, all other characters will be parsed OUT.")
+				if title == None:
+					title = input("Please enter a title of at least 1 character long")
+				else:
+					"-".join(title.split())
+					title.replace(r"[^A-Z\-0-9a-z]", "")
+					print(title)
+					pause 1
+					a = input("Is this acceptable?  Y/N?")
+					if a == "y" or a == "Y":
+						print("Excellent")
+					r = title + ".html"
+					os.system(f"mv {r} posts/{r})
+					print("Post made successfully!")
+		def no_post(i):
+			cmd = "nano " + str(r)
+			ask_post()
+
 
 	def new_post_file():
 	# This will ask for an .html file in a directory under the webroot/drafts and then ask for tags to add
@@ -111,6 +163,10 @@ class pb():
 	# we will just load the default CSS in place of the custom CSS and zip the old CSS for user sake
 		pass
 
+	def help():
+	# Here we will just go through the README in depth and explain wtf to do here :)
+		pass
+
 # ---------------------------------------------------------------------------------------------------
 
 if __name__ == '__main__':
@@ -123,7 +179,8 @@ if __name__ == '__main__':
 		"4-> To edit your profile details",
 		"5-> To rebuild your code base and all your pages (useful for testing styles and such)",
 		"6-> To RESET to DEFAULT your entire website",
-		"7-> To RESET all the CSS/Styles"
+		"7-> To RESET all the CSS/Styles",
+		"8-> HELP ME!!!"
 		]
 
 	for x in greetings:
@@ -146,6 +203,8 @@ if __name__ == '__main__':
 				reset()
 			if option == 7:
 				reset_template()
+			if option == 8:
+				help()
 	except:
 		print('Incorrect Input aborting!')
 		exit()
