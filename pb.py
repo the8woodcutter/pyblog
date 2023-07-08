@@ -20,32 +20,6 @@ from random import randint
 
 class pb():
 # ---------------------------------------------------------------------------------------------------
-
-# GLOBAL VARIABLES:
-	# HMTL Segments:
-	# meta = ""
-	# css = ""
-	# extra_css = ""
-	# header = ""
-	# nav = []
-	# body = ""
-	# post_title = ""
-	# post_author = ""
-	# post_tags = []
-	# post_date_time = ""
-	# blogs = []
-	# footer = ""
-	# js_head = ""
-	# js_foot = ""
-
-	# Features:
-
-	# File/Path Names:
-
-	# Template:
-
-	# Profile:
-
 # ---------------------------------------------------------------------------------------------------
 
 	def __init__():
@@ -93,52 +67,6 @@ class pb():
 
 	def new_post():
 	# This will open up an editor (ie: nano) for creation of post title, post author, post, then tags
-		r = randint(1000,2500)
-		cmd = "nano " + str(r)
-		print("Going to create a post using unix nano editor, choose ^c+x to save it when you're finished")
-		pause 5
-		os.system(cmd)
-		def ask_post():
-			print("Success!")
-			print("Do you like your post:")
-			pause 1
-			f = open(r, "r")
-			print(f.read())
-			pause 3
-			i = input('Yes?  No?')
-			pause 5
-			f = close()
-			if "y" in i or "Y" in i:
-				i = 1
-				yes_post()
-			if "n" in i or "N" in i:
-				i = 0
-				no_post()
-		def yes_post(i):
-			if i = 1
-				author = input("Who wrote is the author of this post?  Or 'skip' for default.")
-				if author == 'skip':
-					author = self.author
-					uri = str(r) + f".{author}."
-				else:
-					uri = str(r) + f".{author}."
-				title = input("What should your title be?  Please only use alphas, numerals and dashes ONLY, all other characters will be parsed OUT.")
-				if title == None:
-					title = input("Please enter a title of at least 1 character long")
-				else:
-					"-".join(title.split())
-					title.replace(r"[^A-Z\-0-9a-z]", "")
-					print(title)
-					pause 1
-					a = input("Is this acceptable?  Y/N?")
-					if a == "y" or a == "Y":
-						print("Excellent")
-					r = title + ".html"
-					os.system(f"mv {r} posts/{r}")
-					print("Post made successfully!")
-		def no_post(i):
-			cmd = "nano " + str(r)
-			ask_post()
 
 
 	def new_post_file():
