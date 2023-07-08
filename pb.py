@@ -23,20 +23,20 @@ class pb():
 
 # GLOBAL VARIABLES:
 	# HMTL Segments:
-	meta = ""
-	css = ""
-	extra_css = ""
-	header = ""
-	nav = []
-	body = ""
-	post_title = ""
-	post_author = ""
-	post_tags = []
-	post_date_time = ""
-	blogs = []
-	footer = ""
-	js_head = ""
-	js_foot = ""
+	# meta = ""
+	# css = ""
+	# extra_css = ""
+	# header = ""
+	# nav = []
+	# body = ""
+	# post_title = ""
+	# post_author = ""
+	# post_tags = []
+	# post_date_time = ""
+	# blogs = []
+	# footer = ""
+	# js_head = ""
+	# js_foot = ""
 
 	# Features:
 
@@ -134,7 +134,7 @@ class pb():
 					if a == "y" or a == "Y":
 						print("Excellent")
 					r = title + ".html"
-					os.system(f"mv {r} posts/{r})
+					os.system(f"mv {r} posts/{r}")
 					print("Post made successfully!")
 		def no_post(i):
 			cmd = "nano " + str(r)
