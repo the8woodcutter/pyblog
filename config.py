@@ -26,6 +26,7 @@ config = {
         # Optional
     },
     "fediverse": {
+        # Optional
         "webfinger": "@chunk@mstdn.social"
     }
     "twitter": {
@@ -38,20 +39,27 @@ config = {
         # Optional
     },
     "gravatar": {
-        "email": "author@gravatar.place"
+        # Optional
+        "email": "", # "author@gravatar.place"
     },
+    "avatarimg": {
+        "url": "", # "https://the8woodcutter.sh/img/pyblog/chunk/profile/my_avatar.png",
+    },
+
 
 # PAGE ELEMENTS:
     "profile": {
-        "username": "", # "author",
-        "homeland": "", # "earth",
-        "gender": "", # "unspecified",
-        "age": "", # "33",
+        "username": "", # "root",
         "photo": "", # "images/my-photo.png",
         "tagline": "", # "I luv pepperonies, and cats and fluffy clouds",
+        "homeland": "", # "earth",
+        "age": "", # "33",
+        "gender": "", # "unspecified",
         "bio": "", # "I luv pepperoni so much that instead of walking around the block with a cigarette in my mouth I have a pepperoni, because I quite that awful habit :)  Did I mention I like cats?  Cats are cool!",
         "url": "", # "https://the8woodcutter.sh",
-        "email": "", # "author@astronuts.sh"
+        "email": "", # "mailto:author@astronuts.sh",
+        "xmpp": "", # "xmpp:stackvice@packets.cc",
+        "tags": [], # ["xmpp","hardrave","computing","linux","networking","car audio","progress","pyblog","cybersecurity"],
     },
     "template_options": {
         "use_meta": True,
