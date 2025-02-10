@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Author: chunk@toofast.vip -- The 8 Woodcutter -- github.com/the8woodcutter/pyblog -----------------
 # ---------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------
@@ -16,8 +16,9 @@
 
 import os
 import re
-from random import randint
+import random
 from datetime import date
+import ./database.py as run_db
 
 class pb():
 
@@ -42,20 +43,18 @@ class pb():
 # ---------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------
 
+# NOTES:
+# * run_db.run()
+# 	* will run ./database.py and return pyblog_database.get('blog_all') as it is a dict()
+
 	def __init__(self, args):
 	# The variables we should declare here are from the config yes?
 		self.args = args
 		self.today = date.today()
 		self.timestamp = today.strftime("%B %d, %Y")
-		with shelve.open('pyblog_database') as db:
-			try:
-				draft_count = db.get('draft_count')
-			except:
-			# this means that we've never saved a draft ever:
-				draft_count = 0
-				db['draft_count'] = draft_count
-			self.draft_count = draft_count
-		db.close()
+		# we want as variables in dictionary 'blog_all' from database
+		blog_all = run_db.run()
+		self.blog_all = blog_all
 
 # ---------------------------------------------------------------------------------------------------
 
@@ -77,7 +76,6 @@ class pb():
 # ---------------------------------------------------------------------------------------------------
 
 	# def mod_title():
-		
 
 	# def mod_tags():
 	# 	tags = []		
@@ -91,6 +89,7 @@ class pb():
 	# ### THIS SECTION IS FOR POST MANIPULATION!!!!
 
 	def query_post_it(self, post_content):
+	# Function to ask after post made what to do with post:
 		sel = input("Choose whether you want to save as draft or post or edit again: (d, p, e ) pls choose a letter only..")
 		if sel == "d":
 			os.system(f"cat {post_content} > ./drafts/")
@@ -102,11 +101,50 @@ class pb():
 			os.system(f"cp ./posts/{filename} ./drafts/")
 			os.system(f"$EDITOR ./drafts/{filename}")
 		pass
+	def create_post(post_content)
+		with shelve.open('pyblog_database') as db:
+			blog_all = db.get('blog_all')
+			posts = db.get('blog_all').get('posts')
+			posts_tags = db.get('blog_all').get('posts').get('tags')
+			posts_media = db.get('blog_all').get('posts').get('media')
+			tags = db.get('blog_all').get('tags')
 
+		db.close()
 	def new_post():
 	# This will open up an editor (ie: nano) for creation of post xtitle, post author, post, then tags
 		# What to ask or tell the client before opening their $EDITOR
-		prompt = ""
+		def publish_post():
+			post_content = os.open('./drafts/new_post.html','r')
+			post_content = post_content.read()
+			post_content.close()
+			sel = input("Post this post to the blog?  y/n")
+			if sel == "y" or sel == "Y":
+				create_post(post_content)
+		prompt = "Create a post using HTML?  y/n"
+		sel = input(prompt)
+		if sel == "y" or sel == "Y":
+			cmd = "$EDITOR ./drafts/new_post.html"
+			os.system(cmd)
+		elif sel == "n" or sel == "N":
+			print("No post?  No more options, exiting...")
+			pause(2)
+			exit()
+		else:
+			print("What?  Y (the letter, meaning yes) or N (also a single alpha meaning no)")
+			prompt = "Create a post using HTML?  y/n"
+			sel = input(prompt)
+			if sel == "y" or sel == "Y":
+				cmd = "$EDITOR ./drafts/new_post.html"
+				os.system(cmd)
+			elif sel == "n" or sel == "N":
+				print("No post?  No more options, exiting...")
+				pause(2)
+				exit()
+			else:
+				print("Function does not exist.  Exiting...")
+				pause(2)
+				exit()
+
 
 	def rebuild():
 	# here we will rebuild all the blog posts,
