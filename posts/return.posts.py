@@ -9,6 +9,7 @@ import os
 class ReturnPosts():
 
 	def __init__(self):
+		
 		blog_all = run_db.run()
 		posts = [post for x in blog_all.get('posts')]
 		json_posts = json.dumps(posts, indent=4)
@@ -17,6 +18,7 @@ class ReturnPosts():
 		self.blog_all = blog_all
 		self.posts = posts
 		self.json_posts = json_posts
+
 		# os.system(f"cat {json_posts} > ./posts.json")
 		# os.system(f"cat {json_posts} > ./posts.json")
 		# os.system(f"echo '{json_posts}' > ./posts.json")

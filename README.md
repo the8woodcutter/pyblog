@@ -5,7 +5,7 @@
 * Author: the8woodcutter || [my XMPP](xmpp:chunk@toofast.vip) || [XMPP room](xmpp:the-subnet@chat.toofast.vip?join)
 * Licence: DO NOT COPY (_until licence decided_)
 
-***
+---
 
 ### `Ideas`
 * I've decided to make a **REDO** not a **REWRITE** as if rewriting is more like copying bashblog code methods (1 for 1 even?), and redoing is copying end result
@@ -18,13 +18,32 @@
 	* Use of python for ANYTHING functional but when used as a script
 * More to come
 
-### `TODO:`
-* next/first python function will be 'what do we do with .config?'
-	* do we parse it ...  like a class and import it/?!?! <<<<<---
-	* anytime we need "key: value" it's imported and referable
+## `TODO:`
+* There needs to be a planned database structure (using the python shelve / pickle scheme, no sql or external db needed)
+	* How to represent this even as a code comment block???
 * the REAL next thing we do is...  decide what page types, ie: main index, tags, categories, profile, post index, rss index, etc
 	* make drawing of the blog intended structure 0-100% (_filling things in as we go_)
+* conjuring of the profile functions and file structure, as well as which ephemeral files/dirs are needed for what (tinker it up foo)
+	* if it's a page, distinct outside of blog page, it can be unified itself, and borrow CSS from `templates/default/*/*` as defaults.
 
-***
+---
 
-`Need help or have a comment then feel free to submit an issue.`
+### `Need help or have a comment then feel free to submit an issue.`
+
+---
+
+## Instructions:
+do:
+	- ~python3 python config.py
+	- fill out the config.py with your data, at least read it
+	- [optional]: cp any `/templates/default/*/*.html` to `/templates/custom/*/` for overiding HTML and CSS things
+	- make a post using `python3 pb.py post`
+	- Highly recommended to change some of the HTML / CSS from default (which you can see all in `/templates/default/*/*`)
+		- cp to `/templates/custom/*/*` then change in `/*/custom/*/*`
+nginx/apache2/httpd:
+	- all pages by the scheme have index.html files that will make the URL `/vlogs/index.html` as `/vlogs/`
+	- howevwer for SEO sake `/posts/i-am-a-post-page.html` is how posts will be represented
+	- tags should use `index.html` but tag name should be at `/tags/{tag_name}/index.html` while presenting as `'/tags/{tag_name}/`
+		- how do we do this??? *scratching head*
+
+---
