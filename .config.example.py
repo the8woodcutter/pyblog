@@ -1,9 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # NOTE: paths are relevant to the pb.py script
 
 config = {
     "software": "PyBlog",
     "software_version": "v0.1",
+    "author": "the8woodcutter",
     "global_title": "My Python Blog",
     "global_description": "A blog about astronauts eating pepperoni!",
     "global_url": "http://astronuts.sh/blog",
@@ -42,37 +43,29 @@ config = {
 
 # PAGE ELEMENTS:
     "profile": {
-        "username": "author",
-        "homeland": "earth",
-        "gender": "unspecified",
-        "age": "33",
-        "photo": "images/my-photo.png",
-        "tagline": "I luv pepperonies, and cats and fluffy clouds",
-        "bio": "I luv pepperoni so much that instead of walking around the block with a cigarette in my mouth I have a pepperoni, because I quite that awful habit :)  Did I mention I like cats?  Cats are cool!",
-        "url": "https://the8woodcutter.sh",
-        "email": "author@astronuts.sh"
+        "username": "", # "author",
+        "homeland": "", # "earth",
+        "gender": "", # "unspecified",
+        "age": "", # "33",
+        "photo": "", # "images/my-photo.png",
+        "tagline": "", # "I luv pepperonies, and cats and fluffy clouds",
+        "bio": "", # "I luv pepperoni so much that instead of walking around the block with a cigarette in my mouth I have a pepperoni, because I quite that awful habit :)  Did I mention I like cats?  Cats are cool!",
+        "url": "", # "https://the8woodcutter.sh",
+        "email": "", # "author@astronuts.sh"
     },
     "template_options": {
         "use_meta": True,
         "use_css": True,
-        "use_extra_css": False,
         "use_header": True,
         "use_nav": True,
         "use_footer": True,
         "use_js_head": False,
-        "use_js_foot": False
+        "use_js_foot": False,
+        "use_profile_page": False,
     },
     # all of the other html files go into body.html
-    "template_block_locations": {
-        "meta_location": "template/meta.html",
-        "css_location": "template/css/blog.css",
-        "css_extra_location": "template/css/extra.css",
-        "header_location": "template/header.html",
-        "nav_location": "template/nav.html",
-        "footer_location": "template/footer.html"
-        "js_head_location": "template/js/js_head.js",
-        "js_foot_location": "template/js/js_foot.js"
-        "body_location": "template/body.html",
-        "blogs_location": "template/blogs.html"
+    "pages": {
+        "blogs_location": "template/root/",
+        "profile_location": "template/profile/",
     }
 }
