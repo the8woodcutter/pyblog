@@ -14,13 +14,15 @@
 # ---------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------
 
-import os
-import re
-import random
-from datetime import date
-import ./database.py as run_db
-
 class pb():
+
+	import os
+	import re
+	import random
+	import json
+	import datetime
+	import database.py as run_db
+
 
 ## The segments of functions, meaning groups of functions:
 ### Configuration options!!!!, Post Actions (post, edit, delete), blog actions (reset, rebuild), guide actions (initial tutorial/help text), features actions (selecting features function, core features implementation functions)
@@ -50,8 +52,8 @@ class pb():
 	def __init__(self, args):
 	# The variables we should declare here are from the config yes?
 		self.args = args
-		self.today = date.today()
-		self.timestamp = today.strftime("%B %d, %Y")
+		self.todaysday = datetime.date.today()
+		self.timestamp = datetime.today.strftime("%B %d, %Y")
 		# we want as variables in dictionary 'blog_all' from database
 		blog_all = run_db.run()
 		self.blog_all = blog_all

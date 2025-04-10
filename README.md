@@ -1,8 +1,10 @@
 ## `PyBlog v0.1`
 
+* **THIS IS OLD NOW**:
+
 ### Python3 weblog site generator script -- Single script to create and manage a blog using only python and text files
 #### I intend to redo bashblog ([github.com/the8woodcutter/bashblog](https://github.com/the8woodcutter/bashblog)) in python to do essentially the same thing
-* Author: the8woodcutter || [my XMPP](xmpp:chunk@toofast.vip) || [XMPP room](xmpp:the-subnet@chat.toofast.vip?join)
+* Author: the8woodcutter || [my XMPP](xmpp:chunk@packets.cc) || [XMPP room](xmpp:wwan@muc.xmpp.packets.cc?join)
 * Licence: DO NOT COPY (_until licence decided_)
 
 ---
@@ -29,7 +31,7 @@
 ---
 
 ### `Need help or have a comment then feel free to submit an issue.`
-
+#### `https://github.com/the8woodcutter/pyblog`
 ---
 
 ## Instructions:
