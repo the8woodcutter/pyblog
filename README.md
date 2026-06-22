@@ -4,8 +4,8 @@
 
 ---
 
-## Monday June 22nd, 2026
 ### Update:
+#### Monday June 22nd, 2026
 
 * I have removed all the `.git` and restarted this repository.
 * The code is heavily commented with regards to a fair amount of future thinking.
